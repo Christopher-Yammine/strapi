@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'wod_db'),
       user: env('DATABASE_USERNAME', 'root'),
       password: env('DATABASE_PASSWORD', ''),
-      ssl: env.bool('DATABASE_SSL', false),
+      ssl: { ca: env('DATABASE_CA') },
     },
   },
 });
